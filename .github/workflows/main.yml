@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Vérification des fichiers
+        run: ls -R elk
       - name: Vérification du fichier docker-compose
         run: docker-compose -f elk/docker-compose.yml config
       - name: Construction des services
